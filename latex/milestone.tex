@@ -45,9 +45,9 @@ University of Waterloo\\
 For my final project in ME780, I plan to address the task of semantic segmentation
 for the use of autonomous navigation of an unmanned surface vessel (USV). I will be 
 doing pixel wise classifications of images from a camera mounted to the USV. For the
-purpose of this project, I will only require 2 classes, water and other. This has 
-several useful applications for marine industry, such as remote surveys. Classifications
-of open water is a part of the of the full stack required to do safe marine autonomy,
+purpose of this project, I will only require 2 classes, water and other. This task
+has several useful applications for the marine industry, such as remote surveys. Classifications
+of open water is a part of the full stack required to do safe marine autonomy,
 similar to classifying drivable roads in autonomous driving applications. This report
 will discuss the proposed strategy to be implemented, as well as the current progress 
 to this date.
@@ -59,9 +59,9 @@ to this date.
 
 \section{Problem Statement }
 This project is largely motivated by future projects from my place of employment.
-I work for the Clearpath robotics, in the research solutions department. We build 
+I work for Clearpath robotics, in the research solutions department. We build 
 custom robots for the use in robotics research. However we are now looking
-towards the remote survey industry, that is using robotics to remotely survey
+towards the remote survey industry, that is, using robotics to remotely survey
 environments that are too dirty, dull or dangerous for humans. One such task is 
 remote marine surveys, wherein a USV is used to collect data from a body of water
 while the operator can stay safely on shore. Clearly a very important part of this
@@ -71,7 +71,7 @@ running aground.
 I therefore propose to use concepts discussed in ME780, Perception For Autonomous Driving,
 and adapt them for use on a marine vehicle in bodies of water. My goal for this project
 is to implement a convolution neural network to make pixel wise classification of an image
-from on onboard camera as either "water" or "other". To the best of my knowledge, there is no
+from an onboard camera as either "water" or "other". To the best of my knowledge, there is no
 dataset publicly available to be used for this task, therefore a large portion of my project will be
 collecting and preparing data to be used for training, testing and evaluation of my network. 
 My network will be evaluated on both run time and accuracy, however as the intent is to do
@@ -107,9 +107,10 @@ converted into a mp4 file using the \verb|bag_tools| ROS package ~\cite{bagtools
 will then be extracted from the mp4 files at a rate of once every 2 seconds. Repetitive frames
 with similar features will be removed.
 
+
 \subsection{Data Preperations}
 Once the images have been collected, they must now be prepared for use with the neural network.
-The images must be labelled at a pixel level as either "water" or "other". To simply classifications
+The images must be labelled at a pixel level as either "water" or "other". To simplify classification,
 the images will be cropped to remove static portions of the images that do not need to be classified,
 such as the outline of the boat itself.
 
@@ -128,7 +129,7 @@ along with initial parameter weights from previously trained networks.
 
 
 %-------------------------------------------------------------------------
-%%%%%%%%% Technical approach
+%%%%%%%%% Preliminary Results
 %State and evaluate your results
 %upto the milestone.
 \section{Preliminary Results}
@@ -139,7 +140,7 @@ ultimately resolved and the USV was brought to working state for data collection
 ~\ref{fig:heron}. A waterproof enclosure was 3D printed for the Point Grey Chameleon camera, and connected
 to the onboard PC through USB, the ROS Point Grey Camera drivers~\cite{PointGreyDrivers} were used. An
 external hardrive was used to store the ROS bags as they were recorded. At this time, data was collected from
-one large lake, and two smaller stormwater ponds in the Waterloo region. This resulted in 184 image total.
+one large lake, and two smaller storm water ponds in the Waterloo region. This resulted in 184 image total.
 I anticipate more images will be required, however I was not able to collect more before the time of this
 report due to unfavourable weather. 
 
@@ -148,10 +149,18 @@ The camera topic from the ROS bag was then converted into mp4 files with little 
 errors in the upstream branch of \verb|srv_tools|, however the fixes can be found on my own fork of the
  repo.~\cite{srvtoolsfork}. Image files were then extracted as png files using the \verb|ffmpeg| tool. 
  These images were then cropped to remove static information such as the Heron's own body, as this was not
- required during classification.
+ required during classification. An example of this can been seen in figure~\ref{fig:crop}.
 
 It was now time for the most time consuming task, labelling all the images! As mentioned previously, an
-open sourced tool was used
+open sourced tool was used ~\cite{tangseng2017looking}, this tool was fairly easy to use, and only required
+a few configurations changes to work for my applications. As you can see from figure ~\ref{fig:tool}, two
+classes were used, "water" and "other". The result is a series of images with RBG values corresponding to
+different classes. All pictures have now been labelled, and are hosted on my GitHub page.
+
+\subsection{SegNet}
+Unfortunately due to delays with hardware, not much progress has yet been done on using the labelled images
+in an implementation of SegNet, however I have been successful in setting up my caffee environment on my
+home desktop, and now that the images are labelled, I will start working with SegNet shortly.
 
 \begin{figure}[t]	
 \begin{center}
@@ -162,8 +171,23 @@ open sourced tool was used
 \label{fig:crop}
 \end{figure}
 
+\begin{figure*}	
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{segmenttool.png}
+\end{center}
+   \caption{Screen shot of annotation tool used, where the blue mask corresponds to the water class, and gree is other}
+\label{fig:tool}
+\end{figure*}
 
 %-------------------------------------------------------------------------
+
+\section{Conclusion}
+The goal for my project is to train a convolution neural network for the task of segmentation. To this point,
+I have collected my own data, and prepared it for use in SegNet. The next steps will be to implement data augmentation techniques to increase the size of my dataset. Once that is complete, I can start training a
+implementation of SegNet with my collected data. In parallel, I'll be collecting more camera data from a 
+few more ponds, however now that I've figured the required techniques to prepare the data, I foresee this 
+being a much less laborious task than the first collection process.
+
 
 {\small
 \bibliographystyle{ieee}
