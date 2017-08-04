@@ -1,3 +1,6 @@
 [submodule "js-segment-annotator"]
 	path = js-segment-annotator
 	url = https://github.com/majcote/js-segment-annotator.git
+[submodule "caffe-segnet-cudnn5"]
+	path = caffe-segnet-cudnn5
+	url = https://github.com/majcote/caffe-segnet-cudnn5.git
