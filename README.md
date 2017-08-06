@@ -12,4 +12,4 @@ Dataset can be found here:
   * net/Data/val.txt
   * net/Models/segnet_train.prototxt
   * net/Models/segnet_solver.prototxt
-4. run `./caffe-segnet-cudnn5/build/tools/caffe train -gpu 0 -solver net/Models/segnet_train.prototxt
+4. run `./caffe-segnet-cudnn5/build/tools/caffe train -gpu 0 -solver net/Models/segnet_solver.prototxt`
