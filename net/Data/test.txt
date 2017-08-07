@@ -1,4 +1,4 @@
-/home/mcote/git-clones/ME780-project/net/Data/PCA_CL_0079CM.png	/home/mcote/git-clones/ME780-project/net/Data/annot/CL_0079CM.png
+/home/mcote/git-clones/ME780-project/net/Data/data/PCA_CL_0079CM.png	/home/mcote/git-clones/ME780-project/net/Data/annot/CL_0079CM.png
 /home/mcote/git-clones/ME780-project/net/Data/data/KW_0008CM.png	/home/mcote/git-clones/ME780-project/net/Data/annot/KW_0008CM.png
 /home/mcote/git-clones/ME780-project/net/Data/data/CL_0015CM.png	/home/mcote/git-clones/ME780-project/net/Data/annot/CL_0015CM.png
 /home/mcote/git-clones/ME780-project/net/Data/data/ERB_0007C.png	/home/mcote/git-clones/ME780-project/net/Data/annot/ERB_0007C.png
@@ -144,4 +144,3 @@
 /home/mcote/git-clones/ME780-project/net/Data/data/CL_0083CM.png	/home/mcote/git-clones/ME780-project/net/Data/annot/CL_0083CM.png
 /home/mcote/git-clones/ME780-project/net/Data/data/CL_0023CM.png	/home/mcote/git-clones/ME780-project/net/Data/annot/CL_0023CM.png
 /home/mcote/git-clones/ME780-project/net/Data/data/CL_0021CM.png	/home/mcote/git-clones/ME780-project/net/Data/annot/CL_0021CM.png
-/home/mcote/git-clones/ME780-project/net/Data/data/
