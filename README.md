@@ -2,8 +2,14 @@
 
 Associated files for my project for ME780 - Autonomous Dirving Perception.
 
-Raw images can be found here https://www.dropbox.com/s/dunwf6ycysz78fz/ME780_Dataset.zip?dl=0
+Dataset can be found here:
 
-Cropped images can be found here https://www.dropbox.com/s/ouuszpubjhdc226/images_cropped.zip?dl=0
-
-Annotated images can be found here, but will be added to this repo eventually https://github.com/majcote/js-segment-annotator/tree/ME780/data/annotations
+1. Clone repository, clone recursivly to pull the caffe implementation I used, otherwise place your own in the main directory
+2. Download data set and unzip in net/Data/
+3. Change file locations in
+  * net/Data/train.txt
+  * net/Data/test.txt
+  * net/Data/val.txt
+  * net/Models/segnet_train.prototxt
+  * net/Models/segnet_solver.prototxt
+4. run `./caffe-segnet-cudnn5/build/tools/caffe train -gpu 0 -solver net/Models/segnet_solver.prototxt`
