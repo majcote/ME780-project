@@ -147,4 +147,3 @@
 /home/mcote/git-clones/ME780-project/net/Data/data/CL_0058C.png	/home/mcote/git-clones/ME780-project/net/Data/annot/CL_0058C_GS.png
 /home/mcote/git-clones/ME780-project/net/Data/data/PCA_CL_0008C.png	/home/mcote/git-clones/ME780-project/net/Data/annot/CL_0008C_GS.png
 /home/mcote/git-clones/ME780-project/net/Data/data/CL_0070C.png	/home/mcote/git-clones/ME780-project/net/Data/annot/CL_0070C_GS.png
-/home/mcote/git-clones/ME780-project/net/Data/data/
