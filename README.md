@@ -13,6 +13,6 @@ Dataset can be found here:
   * net/Models/segnet_train.prototxt
   * net/Models/segnet_solver.prototxt
 4. run `./caffe-segnet-cudnn5/build/tools/caffe train -gpu 0 -solver net/Models/segnet_solver.prototxt`
-5. Make sure you've ran `make pycaffe` and `make distribute` in your caffe source, then run `python Scripts/compute_bn_statistics.py Models/segnet_train.prototxt Models/Training/segnet_iter_1000.caffemodel Models/Inference/``
+5. Make sure you've ran `make pycaffe` and `make distribute` in your caffe source, then run `python Scripts/compute_bn_statistics.py Models/segnet_train.prototxt Models/Training/segnet_iter_1000.caffemodel Models/Inference/`
 6. Visualize results using `python Scripts/test_segmentation_ME780.py --model Models/segnet_inference.prototxt --weights Models/Inference/test_weights.caffemodel --i
 ter 200`
