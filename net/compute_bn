@@ -1,0 +1,6 @@
+#!/bin/bash
+for i in {1..9}
+do
+  python Scripts/compute_bn_statistics.py Models/segnet_train.prototxt 'Models/Training/segnet_iter_'$i'00.caffemodel' Models/Inference/
+  mv Models/Inference/test_weights.caffemodel 'Models/Inference/itr_'$i'00.caffemodel'
+done
