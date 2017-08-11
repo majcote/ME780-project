@@ -1,0 +1,7 @@
+#!/bin/bash
+for i in {1..9}
+do
+  ./caffe-segnet-cudnn5/build/tools/caffe test -model net/Models/segnet_test.prototxt -weights 'net/Models/Inference/itr_'$i'00.caffemodel' -gpu 0 -iterations 140 &>> results.txt
+  echo $i'00' >> results.txt
+
+done
